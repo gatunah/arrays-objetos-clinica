@@ -36,7 +36,6 @@ var cabecera =
         </tr>`;
 
 function mostrarDatos(consulta) {
-    
     var thead = document.createElement('thead');
     thead.innerHTML = cabecera;//SE USA INNERHTML PQ ES UN STRING
 
@@ -77,6 +76,8 @@ function agregarDatosTraumatologia() {
         traumatologia.push(otrosDatos[i]);
     }
     document.write(`<p><u>Cantidad de atenciones para Traumatoloía: ${traumatologia.length}</u></p>`);
+    document.write(`<p><u>Primera atencion: ${traumatologia[0].paciente} - ${traumatologia[0].prevision} | Última atención: ${traumatologia[traumatologia.length - 1].paciente} - ${traumatologia[traumatologia.length - 1].prevision}.</u></p>`);
+
 }
 //REQUERIMIENTO 2
 function eliminarDatosRadiologia() {
@@ -84,6 +85,8 @@ function eliminarDatosRadiologia() {
     radiologia.pop();
     radiologia.shift();
     document.write(`<p><u>Cantidad de atenciones para Radiología: ${radiologia.length}</u></p>`);
+    document.write(`<p><u>Primera atencion: ${radiologia[0].paciente} - ${radiologia[0].prevision} | Última atención: ${radiologia[radiologia.length - 1].paciente} - ${radiologia[radiologia.length - 1].prevision}.</u></p>`);
+
     //SE RETORNA PARA INGRESARLOS COMO PARAMETROS EN IMPRIMIR TODOS LOS PACIENTES 
     return copiaRadiologia;
 }
